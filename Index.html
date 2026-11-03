@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sri Ambalavanar Cottage</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sri Ambalavanar Cottage, Mayiladuthurai: a private one-bedroom AC apartment with free Wi-Fi and free parking. Book directly on WhatsApp with add-ons like station pickup, breakfast and temple tours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@500;700&display=swap">
+<style>
+/* Layout: a night-peacock hero with a feather fan, then lime-washed sections separated by Athangudi tile bands; booking form with a live bill beside it. */
+:root{
+  --paper:#F1F4EE; --paper-2:#E4EAE1; --card:#FBFCF9;
+  --ink:#10282C; --ink-soft:#4B6062; --line:rgba(16,40,44,.14);
+  --peacock:#0E6A68; --peacock-deep:#0A3C44; --gold:#B8862A; --kumkum:#A7322A;
+  --on-accent:#F6F3EA;
+  --hero-bg:#071E26; --hero-fg:#F3EEDF; --hero-soft:#B9C9C3;
+  --display:"Gloock", "Times New Roman", Georgia, serif;
+  --body:"Hanken Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --tamil:"Noto Serif Tamil", "Latha", serif;
+  --r:14px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0B1A1D; --paper-2:#10252A; --card:#122B30;
+  --ink:#E7EFEA; --ink-soft:#9DB2AE; --line:rgba(231,239,234,.14);
+  --peacock:#46B8A8; --peacock-deep:#0D3A40; --gold:#E0B24E; --kumkum:#E3796B;
+  --on-accent:#06191C;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0B1A1D; --paper-2:#10252A; --card:#122B30;
+  --ink:#E7EFEA; --ink-soft:#9DB2AE; --line:rgba(231,239,234,.14);
+  --peacock:#46B8A8; --peacock-deep:#0D3A40; --gold:#E0B24E; --kumkum:#E3796B;
+  --on-accent:#06191C;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth; scroll-padding-top:84px}
+body{margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 var(--body); -webkit-font-smoothing:antialiased}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:60; background:var(--hero-bg)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display); font-weight:400; line-height:1.08; text-wrap:balance; margin:0}
+h2{font-size:clamp(2rem,4.2vw,3.1rem)}
+h3{font-size:1.35rem}
+p{margin:0}
+.wrap{max-width:1180px; margin:0 auto; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--peacock)}
+.ta{font-family:var(--tamil)}
+.lede{color:var(--ink-soft); max-width:60ch; font-size:1.06rem}
+section{padding-block:clamp(64px,9vw,112px)}
+.sec-head{display:grid; gap:14px; margin-bottom:40px}
+:focus-visible{outline:2px solid var(--gold); outline-offset:3px; border-radius:6px}
+@media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important} html{scroll-behavior:auto} }
+
+/* buttons */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; border:0; cursor:pointer; font:600 .98rem var(--body); padding:14px 22px; border-radius:999px; text-decoration:none; transition:transform .2s ease, background .2s ease, box-shadow .2s ease}
+.btn-gold{background:#D9A93F; color:#1A1406}
+.btn-gold:hover{transform:translateY(-2px); box-shadow:0 10px 24px -10px rgba(217,169,63,.8)}
+.btn-ink{background:var(--peacock); color:var(--on-accent)}
+.btn-ink:hover{transform:translateY(-2px); box-shadow:0 10px 24px -12px var(--peacock)}
+.btn-ghost{background:transparent; color:var(--ink); border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--peacock); color:var(--peacock)}
+.btn svg{width:18px; height:18px}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:color-mix(in srgb, var(--hero-bg) 88%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); color:var(--hero-fg); border-bottom:1px solid rgba(243,238,223,.08)}
+.nav .wrap{display:flex; align-items:center; gap:24px; height:68px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; margin-right:auto}
+.brand svg{width:34px; height:34px; flex:none}
+.brand b{font:400 1.2rem var(--display); letter-spacing:.01em; display:block; line-height:1.1}
+.brand small{display:block; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--hero-soft)}
+.nav nav{display:flex; gap:22px}
+.nav nav a{text-decoration:none; font-size:.93rem; color:var(--hero-soft); transition:color .2s}
+.nav nav a:hover{color:#E8C46A}
+.nav .btn{padding:10px 18px; font-size:.9rem}
+@media (max-width:860px){ .nav nav{display:none} }
+
+/* hero */
+.hero{position:relative; overflow:hidden; background:var(--hero-bg); color:var(--hero-fg); padding-block:clamp(56px,8vw,104px) clamp(56px,7vw,96px)}
+#fan{position:absolute; inset:0; width:100%; height:100%; display:block}
+.hero::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(7,30,38,.96) 0%, rgba(7,30,38,.82) 38%, rgba(7,30,38,.25) 75%, rgba(7,30,38,.05) 100%); pointer-events:none}
+.hero .wrap{position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr); gap:48px; align-items:end}
+.hero .eyebrow{color:#E8C46A}
+.hero h1{font-size:clamp(2.7rem,7vw,5.6rem); margin:18px 0 8px; letter-spacing:-.01em}
+.hero h1 em{font-style:normal; color:#E8C46A}
+.hero .tamil-line{font-family:var(--tamil); color:var(--hero-soft); font-size:1.05rem; margin-bottom:22px}
+.hero .lede{color:var(--hero-soft); font-size:1.12rem}
+.hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
+.hero .btn-ghost{color:var(--hero-fg); border-color:rgba(243,238,223,.3)}
+.hero .btn-ghost:hover{color:#E8C46A; border-color:#E8C46A}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.32s}
+@keyframes rise{from{transform:translateY(14px); opacity:.0001} to{transform:none; opacity:1}}
+
+.quick{background:rgba(243,238,223,.07); border:1px solid rgba(243,238,223,.16); border-radius:20px; padding:24px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px)}
+.quick h3{font-size:1.4rem; margin-bottom:4px}
+.quick .from{color:var(--hero-soft); font-size:.92rem; margin-bottom:18px}
+.quick .from b{color:#E8C46A; font-size:1.25rem; font-family:var(--display); font-weight:400}
+.qgrid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.qgrid label{display:grid; gap:4px; font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--hero-soft)}
+.qgrid input,.qgrid select{font:500 .98rem var(--body); color:var(--hero-fg); background:rgba(0,0,0,.25); border:1px solid rgba(243,238,223,.2); border-radius:10px; padding:11px 12px; width:100%; min-width:0; color-scheme:dark}
+.qgrid .full{grid-column:1/-1}
+.quick .btn{width:100%; margin-top:14px}
+.quick .note{font-size:.8rem; color:var(--hero-soft); margin-top:10px; text-align:center}
+@media (max-width:900px){ .hero .wrap{grid-template-columns:1fr} .hero::after{background:linear-gradient(180deg, rgba(7,30,38,.6), rgba(7,30,38,.92) 55%)} }
+
+/* tile band */
+.band{display:block; width:100%; height:26px}
+.t0{fill:var(--peacock-deep)} .t1{fill:var(--gold)} .t2{fill:var(--kumkum)} .t3{fill:var(--paper)}
+
+/* facts */
+.facts{padding-block:0; background:var(--paper-2); border-bottom:1px solid var(--line)}
+.facts ul{list-style:none; margin:0; padding:22px 0; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+.facts li{display:flex; align-items:center; gap:10px; font-weight:600; font-size:.93rem}
+.facts svg{width:26px; height:26px; flex:none; color:var(--peacock)}
+.facts li span small{display:block; font-weight:400; color:var(--ink-soft); font-size:.78rem}
+@media (max-width:1000px){ .facts ul{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (max-width:560px){ .facts ul{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+/* stay */
+.stay-grid{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:56px; align-items:start}
+.specs{margin:28px 0 0; display:grid; grid-template-columns:auto 1fr; border-top:1px solid var(--line)}
+.specs dt,.specs dd{margin:0; padding:13px 0; border-bottom:1px solid var(--line)}
+.specs dt{color:var(--ink-soft); font-size:.9rem; padding-right:24px}
+.specs dd{font-weight:600}
+.gallery{display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:120px; gap:12px}
+.ph{position:relative; margin:0; border-radius:var(--r); overflow:hidden; background:var(--peacock-deep); isolation:isolate}
+.ph svg.pat{position:absolute; inset:0; width:100%; height:100%; opacity:.22}
+.ph img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; transition:transform .6s ease}
+.ph:hover img{transform:scale(1.04)}
+.ph figcaption{position:absolute; left:0; right:0; bottom:0; z-index:2; padding:14px 16px; color:#F3EEDF; font-size:.88rem; background:linear-gradient(transparent, rgba(4,20,24,.75))}
+.ph figcaption b{display:block; font:400 1.1rem var(--display)}
+.g1{grid-column:span 4; grid-row:span 2}.g2{grid-column:span 2; grid-row:span 2}
+.g3,.g4,.g5{grid-column:span 2; grid-row:span 1}
+@media (max-width:960px){ .stay-grid{grid-template-columns:1fr; gap:40px} }
+@media (max-width:560px){ .gallery{grid-template-columns:repeat(2,1fr); grid-auto-rows:110px} .g1{grid-column:span 2; grid-row:span 2} .g2,.g3,.g4,.g5{grid-column:span 1; grid-row:span 1} .g5{grid-column:span 2} }
+
+/* legend strip */
+.legend{background:var(--peacock-deep); color:#F3EEDF; padding-block:clamp(48px,7vw,80px)}
+.legend .wrap{display:grid; grid-template-columns:auto minmax(0,1fr); gap:clamp(24px,5vw,64px); align-items:center}
+.legend .word{font-family:var(--tamil); font-size:clamp(2rem,6vw,4.2rem); color:#E8C46A; line-height:1.2}
+.legend .split{display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:8px; font-size:.86rem; color:#B9C9C3}
+.legend .split span b{color:#F3EEDF; font-weight:600}
+.legend p{font:400 clamp(1.25rem,2.4vw,1.75rem)/1.35 var(--display); max-width:34ch}
+@media (max-width:760px){ .legend .wrap{grid-template-columns:1fr} }
+
+/* add-ons */
+.addon-feat{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px}
+.acard{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:28px; display:flex; flex-direction:column; gap:14px; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease}
+.acard:hover{transform:translateY(-4px); border-color:var(--peacock); box-shadow:0 20px 40px -28px var(--peacock)}
+.acard .ico{width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:var(--paper-2); color:var(--peacock)}
+.acard .ico svg{width:26px; height:26px}
+.acard .tag{align-self:flex-start; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; color:var(--kumkum)}
+.acard p{color:var(--ink-soft); font-size:.95rem; flex:1}
+.acard .price{display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding-top:14px; border-top:1px dashed var(--line)}
+.acard .price b{font:400 1.6rem var(--display); font-variant-numeric:tabular-nums}
+.acard .price small{color:var(--ink-soft)}
+.acard button{font:600 .9rem var(--body); background:none; border:0; color:var(--peacock); cursor:pointer; padding:0; text-align:left}
+.acard button:hover{text-decoration:underline}
+.addon-more{margin-top:20px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; border:1px solid var(--line); border-radius:20px; overflow:hidden; background:var(--card)}
+.addon-more div{padding:20px 24px; display:grid; gap:4px; border-right:1px solid var(--line)}
+.addon-more div:last-child{border-right:0}
+.addon-more b{font-weight:600}
+.addon-more span{color:var(--ink-soft); font-size:.9rem}
+.addon-more em{font-style:normal; font-weight:700; color:var(--peacock); font-variant-numeric:tabular-nums}
+.fine{font-size:.85rem; color:var(--ink-soft); margin-top:16px}
+@media (max-width:900px){ .addon-feat,.addon-more{grid-template-columns:1fr} .addon-more div{border-right:0; border-bottom:1px solid var(--line)} .addon-more div:last-child{border-bottom:0} }
+
+/* nearby */
+.near{background:var(--paper-2)}
+.near-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px}
+.ncol{background:var(--card); border-radius:20px; padding:26px; border:1px solid var(--line)}
+.ncol h3{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:6px}
+.ncol h3 small{font:600 .72rem var(--body); letter-spacing:.12em; text-transform:uppercase; color:var(--kumkum)}
+.ncol ul{list-style:none; margin:0; padding:0}
+.ncol li{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 12px; padding:12px 0; border-bottom:1px solid var(--line); align-items:center}
+.ncol li:last-child{border-bottom:0}
+.ncol li span{min-width:0}
+.ncol li small{display:block; color:var(--ink-soft); font-size:.8rem}
+.ncol li b{font-variant-numeric:tabular-nums; font-weight:600; color:var(--peacock); white-space:nowrap}
+.ncol .bar{grid-column:1/-1; height:3px; border-radius:3px; background:var(--paper-2); overflow:hidden}
+.ncol .bar i{display:block; height:100%; background:linear-gradient(90deg,var(--peacock),var(--gold)); border-radius:3px}
+@media (max-width:960px){ .near-grid{grid-template-columns:1fr} }
+
+/* rules */
+.rules-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:20px; overflow:hidden}
+.rule{background:var(--card); padding:26px; display:grid; gap:8px; align-content:start}
+.rule svg{width:28px; height:28px; color:var(--peacock)}
+.rule b{font:400 1.25rem var(--display)}
+.rule p{color:var(--ink-soft); font-size:.92rem}
+.rule.no svg{color:var(--kumkum)}
+@media (max-width:960px){ .rules-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:520px){ .rules-grid{grid-template-columns:1fr} .rule{grid-template-columns:28px minmax(0,1fr); column-gap:14px; row-gap:2px; padding:18px 20px} .rule svg{grid-row:span 2; width:24px; height:24px; margin-top:2px} .rule b{font-size:1.12rem} }
+@media (max-width:420px){ .hero h1{font-size:2.5rem} .hero-cta .btn{flex:1} .acard{padding:22px} .bform{border-radius:18px} .bill{padding:22px} .brand small{letter-spacing:.08em} }
+
+/* booking */
+.book{background:var(--paper)}
+.book-grid{display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr); gap:28px; align-items:start}
+.bform{background:var(--card); border:1px solid var(--line); border-radius:22px; padding:clamp(20px,3vw,36px); display:grid; gap:26px}
+.bform fieldset{border:0; padding:0; margin:0; display:grid; gap:14px; min-width:0}
+.bform legend{font:400 1.3rem var(--display); padding:0; margin-bottom:4px; display:flex; gap:10px; align-items:baseline}
+.bform legend span{font:700 .72rem var(--body); letter-spacing:.12em; color:var(--kumkum)}
+.row{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+.row3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.field{display:grid; gap:6px; min-width:0}
+.field label{font-size:.85rem; font-weight:600}
+.field input,.field select,.field textarea{font:500 1rem var(--body); color:var(--ink); background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:12px 14px; width:100%; min-width:0; transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none; border-color:var(--peacock); box-shadow:0 0 0 3px color-mix(in srgb, var(--peacock) 20%, transparent)}
+.field small{color:var(--ink-soft); font-size:.78rem}
+.field .err{color:var(--kumkum); font-size:.8rem; font-weight:600}
+.addon-pick{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px}
+.pick{position:relative}
+.pick input{position:absolute; opacity:0; pointer-events:none}
+.pick label{display:grid; grid-template-columns:22px minmax(0,1fr) auto; gap:10px; align-items:center; padding:14px; border:1px solid var(--line); border-radius:14px; cursor:pointer; background:var(--paper); transition:border-color .2s, background .2s; height:100%}
+.pick label .box{width:22px; height:22px; border-radius:7px; border:1.5px solid var(--ink-soft); display:grid; place-items:center; transition:all .2s}
+.pick label .box svg{width:14px; height:14px; color:var(--on-accent); opacity:0}
+.pick label b{font-weight:600; font-size:.94rem; display:block}
+.pick label small{color:var(--ink-soft); font-size:.78rem}
+.pick label em{font-style:normal; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; font-size:.92rem}
+.pick input:checked + label{border-color:var(--peacock); background:color-mix(in srgb, var(--peacock) 9%, var(--card))}
+.pick input:checked + label .box{background:var(--peacock); border-color:var(--peacock)}
+.pick input:checked + label .box svg{opacity:1}
+.pick input:focus-visible + label{outline:2px solid var(--gold); outline-offset:2px}
+@media (max-width:640px){ .row,.row3,.addon-pick{grid-template-columns:1fr} }
+
+.bill{position:sticky; top:calc(env(safe-area-inset-top,0px) + 90px); background:var(--hero-bg); color:var(--hero-fg); border-radius:22px; padding:28px; overflow:hidden; isolation:isolate}
+.bill::before{content:""; position:absolute; right:-60px; top:-60px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, #1D5FA8 0 18%, #2E9E7A 19% 38%, #C9962B 39% 52%, transparent 53%); opacity:.35; z-index:-1}
+.bill h3{font-size:1.5rem}
+.bill .dates{color:var(--hero-soft); font-size:.92rem; margin:6px 0 18px}
+.bill ul{list-style:none; margin:0; padding:0; display:grid; gap:10px; border-top:1px dashed rgba(243,238,223,.2); padding-top:16px}
+.bill li{display:flex; justify-content:space-between; gap:16px; font-size:.94rem}
+.bill li span:first-child{color:var(--hero-soft); min-width:0}
+.bill li span:last-child{font-variant-numeric:tabular-nums; white-space:nowrap}
+.bill .total{display:flex; justify-content:space-between; align-items:baseline; margin-top:18px; padding-top:16px; border-top:1px solid rgba(243,238,223,.25)}
+.bill .total b{font:400 2.2rem var(--display); color:#E8C46A; font-variant-numeric:tabular-nums}
+.bill .btn{width:100%; margin-top:20px}
+.bill .note{font-size:.8rem; color:var(--hero-soft); margin-top:12px}
+.done{margin-top:18px; padding:18px; border-radius:16px; background:rgba(243,238,223,.08); border:1px solid rgba(243,238,223,.18); display:grid; gap:12px}
+.done pre{margin:0; white-space:pre-wrap; font:500 .82rem/1.5 var(--body); color:var(--hero-fg); max-height:220px; overflow:auto; background:rgba(0,0,0,.25); padding:12px; border-radius:10px}
+.done .acts{display:flex; gap:10px; flex-wrap:wrap}
+.done .acts .btn{width:auto; flex:1; margin:0; padding:12px 16px}
+.done .btn-ghost{color:var(--hero-fg); border-color:rgba(243,238,223,.3)}
+@media (max-width:960px){ .book-grid{grid-template-columns:1fr} .bill{position:relative; top:auto} }
+
+/* faq */
+.faq-grid{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:56px}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{cursor:pointer; list-style:none; padding:20px 40px 20px 0; position:relative; font-weight:600; font-size:1.04rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:""; position:absolute; right:6px; top:50%; width:12px; height:12px; border-right:2px solid var(--peacock); border-bottom:2px solid var(--peacock); transform:translateY(-70%) rotate(45deg); transition:transform .25s}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details p{padding:0 0 20px; color:var(--ink-soft); max-width:62ch}
+@media (max-width:900px){ .faq-grid{grid-template-columns:1fr; gap:28px} }
+
+/* footer */
+footer{background:var(--hero-bg); color:var(--hero-soft); padding-block:64px 110px}
+footer .wrap{display:grid; grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,1fr)); gap:40px}
+footer h2{color:var(--hero-fg); font-size:clamp(1.8rem,3.4vw,2.6rem)}
+footer .ta{color:#E8C46A; font-size:1.1rem; margin-top:8px}
+footer h4{margin:0 0 12px; font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:#E8C46A}
+footer p,footer li{font-size:.95rem}
+footer ul{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+footer a{color:var(--hero-fg)}
+footer .copy{grid-column:1/-1; border-top:1px solid rgba(243,238,223,.12); padding-top:20px; font-size:.82rem}
+@media (max-width:860px){ footer .wrap{grid-template-columns:1fr} }
+
+/* mobile bar */
+.mbar{transition:transform .3s ease}
+.mbar.away{transform:translateY(110%)}
+.mbar{position:fixed; left:0; right:0; bottom:0; z-index:55; display:none; gap:10px; padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px)); background:color-mix(in srgb, var(--hero-bg) 94%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); align-items:center; color:var(--hero-fg)}
+.mbar div{flex:1; font-size:.8rem; color:var(--hero-soft); line-height:1.3}
+.mbar div b{display:block; color:#E8C46A; font:400 1.15rem var(--display)}
+.mbar .btn{padding:12px 18px}
+@media (max-width:760px){ .mbar{display:flex} footer{padding-bottom:130px} }
+</style>
+</head>
+<body>
+
+<!-- shared tile pattern (Athangudi-style) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="tile" width="26" height="26" patternUnits="userSpaceOnUse">
+      <rect width="26" height="26" class="t0"/>
+      <path d="M13 2C16 8 18 10 24 13C18 16 16 18 13 24C10 18 8 16 2 13C8 10 10 8 13 2Z" class="t1"/>
+      <circle cx="13" cy="13" r="2.6" class="t2"/>
+      <path d="M0 0h3.5a3.5 3.5 0 0 1-3.5 3.5zM26 0v3.5A3.5 3.5 0 0 1 22.5 0zM0 26v-3.5A3.5 3.5 0 0 1 3.5 26zM26 26h-3.5a3.5 3.5 0 0 1 3.5-3.5z" class="t2"/>
+    </pattern>
+    <pattern id="tileSoft" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M22 4C27 14 30 17 40 22C30 27 27 30 22 40C17 30 14 27 4 22C14 17 17 14 22 4Z" fill="none" stroke="#E8C46A" stroke-width="1.2"/>
+      <circle cx="22" cy="22" r="3" fill="#E8C46A"/>
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#E8C46A"/><circle cx="44" cy="0" r="5" fill="none" stroke="#E8C46A"/><circle cx="0" cy="44" r="5" fill="none" stroke="#E8C46A"/><circle cx="44" cy="44" r="5" fill="none" stroke="#E8C46A"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Sri Ambalavanar Cottage home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="18" rx="14" ry="17" fill="#B8862A"/><ellipse cx="20" cy="19" rx="10.5" ry="13" fill="#2E9E7A"/><ellipse cx="20" cy="20" rx="7" ry="8.6" fill="#1D5FA8"/><ellipse cx="20" cy="21" rx="3.6" ry="4.4" fill="#0A1B3A"/><path d="M20 35v5" stroke="#B8862A" stroke-width="1.6"/></svg>
+      <span><b>Sri Ambalavanar</b><small>Cottage · Mayiladuthurai</small></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#stay">The stay</a><a href="#addons">Add-ons</a><a href="#nearby">Nearby</a><a href="#rules">House rules</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-gold" href="#book">Book now</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="hero-title">
+  <canvas id="fan" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow rise">Mayiladuthurai · Tamil Nadu 609001</p>
+      <h1 id="hero-title" class="rise d1">Stay where the <em>peacock</em> danced.</h1>
+      <p class="tamil-line rise d2" lang="ta">ஸ்ரீ அம்பலவாணர் காட்டேஜ் · வருக வருக</p>
+      <p class="lede rise d2">A private one-bedroom apartment in the temple town of Mayiladuthurai. Air-conditioned, free Wi-Fi, free parking on site, and check-in almost any hour of the day.</p>
+      <div class="hero-cta rise d3">
+        <a class="btn btn-gold" href="#book">Check dates &amp; price</a>
+        <a class="btn btn-ghost" href="#addons">See add-ons</a>
+      </div>
+    </div>
+    <form class="quick rise d4" id="quick" novalidate>
+      <h3>Plan your stay</h3>
+      <p class="from">From <b id="q-rate">₹1,800</b> per night · whole apartment</p>
+      <div class="qgrid">
+        <label for="q-in">Check-in<input type="date" id="q-in" required></label>
+        <label for="q-out">Check-out<input type="date" id="q-out" required></label>
+        <label class="full" for="q-guests">Guests
+          <select id="q-guests">
+            <option value="1">1 adult</option>
+            <option value="2" selected>2 adults</option>
+            <option value="3">3 adults</option>
+          </select>
+        </label>
+      </div>
+      <button class="btn btn-gold" type="submit">See full price</button>
+      <p class="note">No payment now. The owner confirms on WhatsApp.</p>
+    </form>
+  </div>
+</section>
+
+<section class="facts" aria-label="Highlights">
+  <div class="wrap">
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor"/></svg><span>Free Wi-Fi<small>Whole apartment</small></span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9.5 17V7h3.5a3 3 0 0 1 0 6H9.5"/></svg><span>Free parking<small>Private, on site</small></span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 4l3 2 3-2M9 20l3-2 3 2"/></svg><span>Air-conditioned<small>Bedroom</small></span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M4 7h16"/><circle cx="12" cy="14" r="4.2"/><circle cx="7.5" cy="4.8" r=".6" fill="currentColor"/></svg><span>Washing machine<small>In the apartment</small></span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></svg><span>Flexible check-in<small>12:00 AM to 11:00 PM</small></span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg><span>English &amp; Tamil<small>Spoken at reception</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="stay" aria-labelledby="stay-title">
+  <div class="wrap stay-grid">
+    <div>
+      <div class="sec-head">
+        <p class="eyebrow">The stay</p>
+        <h2 id="stay-title">The whole apartment, just for you.</h2>
+        <p class="lede">A bright living room with a sofa and ceiling fan, a bedroom with a solid wooden bed, a private bathroom with shower, and a city view. Comfortable for a couple or a small family visiting the temples.</p>
+      </div>
+      <dl class="specs">
+        <dt>Type</dt><dd>One-bedroom apartment</dd>
+        <dt>Bedroom</dt><dd>Wooden queen bed, wardrobe, AC</dd>
+        <dt>Living room</dt><dd>Sofa, ceiling fan, TV</dd>
+        <dt>Bathroom</dt><dd>Private, with shower</dd>
+        <dt>Also inside</dt><dd>Washing machine, dressing mirror</dd>
+        <dt>View</dt><dd>City view</dd>
+        <dt>Parking</dt><dd>Free private parking on site</dd>
+      </dl>
+    </div>
+    <div class="gallery" aria-label="Photos">
+      <figure class="ph g1"><svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tileSoft)"/></svg><img src="images/living-room.jpg" alt="Living room with sofa and ceiling fan" onerror="this.remove()"><figcaption><b>Living room</b>Sofa, ceiling fan and TV</figcaption></figure>
+      <figure class="ph g2"><svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tileSoft)"/></svg><img src="images/bedroom.jpg" alt="Bedroom with wooden bed" onerror="this.remove()"><figcaption><b>Bedroom</b>Wooden queen bed</figcaption></figure>
+      <figure class="ph g3"><svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tileSoft)"/></svg><img src="images/tv-corner.jpg" alt="Seating corner with TV" onerror="this.remove()"><figcaption><b>Sit-out corner</b></figcaption></figure>
+      <figure class="ph g4"><svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tileSoft)"/></svg><img src="images/mirror.jpg" alt="Dressing mirror and wardrobe" onerror="this.remove()"><figcaption><b>Dressing area</b></figcaption></figure>
+      <figure class="ph g5"><svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tileSoft)"/></svg><img src="images/building.jpg" alt="Front of the building with signboard" onerror="this.remove()"><figcaption><b>The building</b></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="legend">
+  <div class="wrap">
+    <div>
+      <div class="word" lang="ta">மயில் · ஆடு · துறை</div>
+      <div class="split"><span><b>Mayil</b> peacock</span><span><b>Aadu</b> to dance</span><span><b>Thurai</b> riverbank</span></div>
+    </div>
+    <p>The town takes its name from the legend of Goddess Parvati, who worshipped Lord Shiva here in the form of a peahen on the banks of the Cauvery.</p>
+  </div>
+</div>
+
+<svg class="band" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tile)"/></svg>
+
+<section id="addons" aria-labelledby="addons-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Featured add-ons</p>
+      <h2 id="addons-title">Make the trip easier.</h2>
+      <p class="lede">Pick these while booking and they're added to your estimate. We arrange each one for you before you arrive.</p>
+    </div>
+    <div class="addon-feat" id="addon-feat"></div>
+    <div class="addon-more" id="addon-more"></div>
+    <p class="fine">Rates shown are indicative. The final price is confirmed with you on WhatsApp before your stay.</p>
+  </div>
+</section>
+
+<section id="nearby" class="near" aria-labelledby="near-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Nearby</p>
+      <h2 id="near-title">Everything you came for, close by.</h2>
+      <p class="lede">Distances are the shortest walking or driving distance from the cottage.</p>
+    </div>
+    <div class="near-grid" id="near-grid"></div>
+  </div>
+</section>
+
+<svg class="band" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tile)"/></svg>
+
+<section id="rules" aria-labelledby="rules-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">House rules</p>
+      <h2 id="rules-title">Good to know before you come.</h2>
+    </div>
+    <div class="rules-grid">
+      <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 4H5v16h5M14 8l4 4-4 4M18 12H9"/></svg><b>Check-in</b><p>12:00 AM to 11:00 PM. Please tell us your arrival time in advance.</p></div>
+      <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h9"/></svg><b>Check-out</b><p>12:00 AM to 11:00 PM on your departure day.</p></div>
+      <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="6" r="2.5"/><circle cx="17" cy="9" r="2"/><path d="M4.5 20v-4a4.5 4.5 0 0 1 9 0v4M14 20v-3a3 3 0 0 1 6 0v3"/></svg><b>Children</b><p>All ages welcome. Children 11 and above are charged as adults.</p></div>
+      <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 18V8M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.6"/></svg><b>Beds</b><p>Cribs and extra beds are not available.</p></div>
+      <div class="rule no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 15h13v3H3zM18 15v3M20.5 15v3M18 12c0-2 2-2 2-4"/><path d="M3 3l18 18"/></svg><b>No smoking</b><p>Smoking is not allowed anywhere in the apartment.</p></div>
+      <div class="rule no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="6" cy="10" r="1.8"/><circle cx="10" cy="6" r="1.8"/><circle cx="14" cy="6" r="1.8"/><circle cx="18" cy="10" r="1.8"/><path d="M8 17c0-3 2-5 4-5s4 2 4 5-2 3-4 2-4 1-4-2z"/><path d="M3 3l18 18"/></svg><b>No pets</b><p>Pets are not allowed.</p></div>
+      <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.5-1.6 1.6-2.4 3-2.4s2.5.8 3 2.4M14.5 10h4M14.5 13h3"/></svg><b>ID proof</b><p>A valid government photo ID is needed for every adult at check-in.</p></div>
+      <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><b>Cancellation</b><p>Terms depend on your dates and are shared with you before you confirm.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="book" aria-labelledby="book-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Book direct</p>
+      <h2 id="book-title">Book in two minutes on WhatsApp.</h2>
+      <p class="lede">Fill in your stay, pick any add-ons, and send. Your booking request opens in WhatsApp with every detail filled in, and we reply to confirm availability.</p>
+    </div>
+    <div class="book-grid">
+      <form class="bform" id="bform" novalidate>
+        <fieldset>
+          <legend><span>STEP 1</span>Your dates</legend>
+          <div class="row">
+            <div class="field"><label for="b-in">Check-in</label><input type="date" id="b-in" required></div>
+            <div class="field"><label for="b-out">Check-out</label><input type="date" id="b-out" required></div>
+          </div>
+          <div class="row row3">
+            <div class="field"><label for="b-adults">Adults</label><select id="b-adults"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select><small>Count children 11+ as adults</small></div>
+            <div class="field"><label for="b-kids">Children under 11</label><select id="b-kids"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option></select></div>
+            <div class="field"><label for="b-time">Arrival time</label><select id="b-time"></select></div>
+          </div>
+          <p class="field"><span class="err" id="err-dates" hidden></span></p>
+        </fieldset>
+        <fieldset>
+          <legend><span>STEP 2</span>Add-ons</legend>
+          <div class="addon-pick" id="addon-pick"></div>
+        </fieldset>
+        <fieldset>
+          <legend><span>STEP 3</span>Your details</legend>
+          <div class="row">
+            <div class="field"><label for="b-name">Full name</label><input id="b-name" autocomplete="name" placeholder="As on your ID"><span class="err" id="err-name" hidden></span></div>
+            <div class="field"><label for="b-phone">Mobile number</label><input id="b-phone" inputmode="tel" autocomplete="tel" placeholder="10-digit mobile"><span class="err" id="err-phone" hidden></span></div>
+          </div>
+          <div class="field"><label for="b-note">Special requests</label><textarea id="b-note" rows="3" placeholder="Temple visits planned, late arrival, anything we should know"></textarea></div>
+        </fieldset>
+      </form>
+
+      <aside class="bill" aria-live="polite">
+        <h3>Your stay</h3>
+        <p class="dates" id="bill-dates"></p>
+        <ul id="bill-lines"></ul>
+        <div class="total"><span>Estimated total</span><b id="bill-total">₹0</b></div>
+        <button class="btn btn-gold" type="submit" form="bform">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+          Send booking request
+        </button>
+        <p class="note">No payment now. Rates are indicative; the owner confirms the final amount and availability.</p>
+        <div class="done" id="done" hidden>
+          <strong>Your request is ready</strong>
+          <pre id="done-msg"></pre>
+          <div class="acts">
+            <a class="btn btn-gold" id="wa-link" href="#" target="_blank" rel="noopener">Open WhatsApp</a>
+            <button class="btn btn-ghost" type="button" id="copy-msg">Copy message</button>
+          </div>
+          <small id="copy-state" style="color:var(--hero-soft)"></small>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div class="sec-head">
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-title">What guests usually ask.</h2>
+      <p class="lede">Something else on your mind? Message us on WhatsApp and we'll answer quickly.</p>
+    </div>
+    <div>
+      <details open><summary>What are the check-in and check-out times?</summary><p>You can check in and check out any time between 12:00 AM and 11:00 PM. Just let us know your arrival time in advance so someone is ready to receive you.</p></details>
+      <details><summary>Do you serve breakfast?</summary><p>Breakfast isn't included in the room rate, but you can add a home-style South Indian breakfast while booking. Several messes and tiffin centres are also about 900 m away.</p></details>
+      <details><summary>Is there pickup from the railway station or airport?</summary><p>Yes, as an add-on. Mayiladuthurai Junction is 3.5 km away, and we can also arrange a car from Puducherry Airport (109 km).</p></details>
+      <details><summary>Can I park my car?</summary><p>Yes. Free private parking is available on site.</p></details>
+      <details><summary>Is there a restaurant or swimming pool?</summary><p>There's no restaurant or pool at the cottage. S V R Mess, Muniyandi Villas Tiffin Centre and Nalini Cafe are all about 900 m away.</p></details>
+      <details><summary>Is it good for families with children?</summary><p>Children of all ages are welcome. Children 11 and above are charged as adults, and cribs or extra beds aren't available.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Sri Ambalavanar Cottage</h2>
+      <p class="ta" lang="ta">ஸ்ரீ அம்பலவாணர் காட்டேஜ், மயிலாடுதுறை</p>
+      <p style="margin-top:14px">Mayiladuthurai, Tamil Nadu 609001</p>
+      <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Ambalavanar+Cottage+Mayiladuthurai" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>Phone: <span id="f-phone"></span></li>
+        <li>WhatsApp: <span id="f-wa"></span></li>
+        <li>Reception speaks English and Tamil</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Getting here</h4>
+      <ul>
+        <li>Mayiladuthurai Junction · 3.5 km</li>
+        <li>Nidur station · 5 km</li>
+        <li>Puducherry Airport · 109 km</li>
+      </ul>
+    </div>
+    <p class="copy">© <span id="yr"></span> Sri Ambalavanar Cottage, Mayiladuthurai.</p>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div>From<b id="m-rate">₹1,800</b>per night</div>
+  <a class="btn btn-gold" href="#book">Book on WhatsApp</a>
+</div>
+
+<script>
+/* ============ EDIT THESE DETAILS ============ */
+const CONFIG = {
+  whatsapp: "919003197704", // owner's WhatsApp with country code, digits only
+  phoneDisplay: "+91 90031 97704",
+  ratePerNight: 1800,      // room rate in ₹ (indicative)
+  addons: [
+    { id:"pickup",   name:"Station pickup & drop", desc:"Car from Mayiladuthurai Junction (3.5 km) on arrival and departure.", price:400,  unit:"stay",       featured:true,  tag:"Most booked", icon:"car" },
+    { id:"temple",   name:"Temple circuit by car", desc:"A full day with a driver to Vaitheeswaran Koil, Thirukadaiyur and Mayuranathar Temple, at your pace.", price:2500, unit:"stay", featured:true, tag:"Navagraha trail", icon:"temple" },
+    { id:"break",    name:"Home-style breakfast",  desc:"Idli, dosa or pongal with chutney, sambar and filter coffee, served in the apartment.", price:150, unit:"personNight", featured:true, tag:"Fresh every morning", icon:"cup" },
+    { id:"sea",      name:"Tharangambadi sea-coast trip", desc:"Day trip to the Danish fort and beach.", price:2200, unit:"stay", icon:"wave" },
+    { id:"decor",    name:"Celebration decoration", desc:"Flowers and balloons for a birthday or anniversary.", price:1200, unit:"stay", icon:"star" },
+    { id:"airport",  name:"Puducherry Airport transfer", desc:"One-way car, about 109 km.", price:3500, unit:"stay", icon:"plane" }
+  ],
+  nearby: [
+    { title:"Walk out", tag:"under 1 km", items:[
+      ["Rani Park","Park",0.75],["S V R Mess","Restaurant",0.9],["Muniyandi Villas Tiffin Centre","Tiffin & meals",0.9],["Nalini Cafe","Cafe",0.9] ]},
+    { title:"Around town", tag:"1–5 km", items:[
+      ["Municipal Park","Park",1.3],["Vidhya Park","Park",1.9],["Dolphin Aqua Park","Water park",2.4],["Mayiladuthurai Junction","Railway station",3.5],["Nehru Childrens Park","Park",4.2],["Nidur","Railway station",5] ]},
+    { title:"Day trips", tag:"by car", items:[
+      ["Vaitheeswaran Koil","Navagraha temple · approx.",15],["Thirukadaiyur Abirami Temple","Temple · approx.",22],["Tharangambadi fort & beach","Sea coast · approx.",30],["Puducherry Airport","Airport",109] ]}
+  ]
+};
+/* ============================================ */
+
+const inr = n => "₹" + new Intl.NumberFormat("en-IN").format(Math.round(n));
+const $ = id => document.getElementById(id);
+const ICONS = {
+  car:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 16v-3l2-5h14l2 5v3zM3 16v2h3v-2M18 16v2h3v-2"/><circle cx="7" cy="13" r="1"/><circle cx="17" cy="13" r="1"/></svg>',
+  temple:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2v2M10 4h4l1 3H9zM8 7h8l1 4H7zM6 11h12l1 5H5zM4 16h16v5H4zM10 21v-3h4v3"/></svg>',
+  cup:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h13v5a5 5 0 0 1-5 5h-3a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 2 1.5 2 1.5 4M12 3c0 2 1.5 2 1.5 4"/></svg>',
+  wave:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 15c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 19c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M6 11V5l5-2v8"/></svg>',
+  star:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>',
+  plane:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M10 13L3 10l1.5-1.5 7.5 1L16.5 5a1.8 1.8 0 0 1 2.5 2.5L14.5 12l1 7.5L14 21l-3-7z"/></svg>'
+};
+const tick = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>';
+const unitLabel = u => u === "personNight" ? "per person / day" : "per booking";
+
+/* render add-ons */
+const feat = CONFIG.addons.filter(a => a.featured), more = CONFIG.addons.filter(a => !a.featured);
+$("addon-feat").innerHTML = feat.map(a => `
+  <article class="acard">
+    <div class="ico">${ICONS[a.icon]}</div>
+    <span class="tag">${a.tag || ""}</span>
+    <h3>${a.name}</h3>
+    <p>${a.desc}</p>
+    <div class="price"><span><b>${inr(a.price)}</b> <small>${unitLabel(a.unit)}</small></span><button type="button" data-add="${a.id}">Add to booking →</button></div>
+  </article>`).join("");
+$("addon-more").innerHTML = more.map(a => `<div><b>${a.name}</b><span>${a.desc}</span><em>${inr(a.price)} <small style="font-weight:400;color:var(--ink-soft)">${unitLabel(a.unit)}</small></em></div>`).join("");
+$("addon-pick").innerHTML = CONFIG.addons.map(a => `
+  <div class="pick"><input type="checkbox" id="ad-${a.id}" value="${a.id}">
+  <label for="ad-${a.id}"><span class="box">${tick}</span><span><b>${a.name}</b><small>${unitLabel(a.unit)}</small></span><em>${inr(a.price)}</em></label></div>`).join("");
+
+/* render nearby */
+const maxKm = { "Walk out":1, "Around town":5, "Day trips":110 };
+$("near-grid").innerHTML = CONFIG.nearby.map(g => `
+  <div class="ncol"><h3>${g.title}<small>${g.tag}</small></h3><ul>
+  ${g.items.map(([n,k,d]) => `<li><span>${n}<small>${k}</small></span><b>${d < 1 ? Math.round(d*1000)+" m" : (d >= 10 ? "≈ " : "") + d + " km"}</b><span class="bar"><i style="width:${Math.max(6, Math.min(100, d / maxKm[g.title] * 100))}%"></i></span></li>`).join("")}
+  </ul></div>`).join("");
+
+/* contact */
+$("f-phone").textContent = CONFIG.phoneDisplay || "To be added";
+$("f-wa").textContent = CONFIG.whatsapp ? (CONFIG.phoneDisplay || "+" + CONFIG.whatsapp) : "To be added";
+/* hide the mobile booking bar while the booking form or footer is on screen */
+(() => {
+  const bar = document.querySelector(".mbar"), seen = new Set();
+  const io = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)); bar.classList.toggle("away", seen.size > 0); });
+  ["book", "contact"].forEach(id => io.observe($(id)));
+})();
+$("yr").textContent = new Date().getFullYear();
+["q-rate","m-rate"].forEach(id => $(id).textContent = inr(CONFIG.ratePerNight));
+
+/* arrival times */
+const times = []; for (let h = 0; h < 24; h++) { const hr = h % 12 || 12; times.push(`${hr}:00 ${h < 12 ? "AM" : "PM"}`); }
+$("b-time").innerHTML = '<option value="">Select</option>' + times.slice(0, 24).map(t => `<option${t === "2:00 PM" ? " selected" : ""}>${t}</option>`).join("");
+
+/* dates */
+const iso = d => { const z = new Date(d.getTime() - d.getTimezoneOffset() * 60000); return z.toISOString().slice(0, 10); };
+const today = new Date(); today.setHours(0,0,0,0);
+const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+const pretty = s => new Date(s + "T00:00:00").toLocaleDateString("en-IN", { weekday:"short", day:"numeric", month:"short", year:"numeric" });
+["q-in","q-out","b-in","b-out"].forEach(id => $(id).min = iso(today));
+$("q-in").value = $("b-in").value = iso(addDays(today, 1));
+$("q-out").value = $("b-out").value = iso(addDays(today, 3));
+
+function nights(){
+  const a = new Date($("b-in").value + "T00:00:00"), b = new Date($("b-out").value + "T00:00:00");
+  const n = Math.round((b - a) / 86400000);
+  return isFinite(n) ? n : 0;
+}
+function selected(){ return CONFIG.addons.filter(a => $("ad-" + a.id).checked); }
+function calc(){
+  const n = nights(), adults = +$("b-adults").value, kids = +$("b-kids").value;
+  const lines = [], ok = n > 0;
+  let total = 0;
+  if (ok){
+    const room = CONFIG.ratePerNight * n; total += room;
+    lines.push([`Apartment · ${inr(CONFIG.ratePerNight)} × ${n} night${n > 1 ? "s" : ""}`, room]);
+    selected().forEach(a => {
+      const qty = a.unit === "personNight" ? adults * n : 1;
+      const amt = a.price * qty; total += amt;
+      lines.push([a.unit === "personNight" ? `${a.name} · ${adults} × ${n} day${n > 1 ? "s" : ""}` : a.name, amt]);
+    });
+  }
+  return { n, adults, kids, lines, total, ok };
+}
+function render(){
+  const c = calc();
+  $("err-dates").hidden = c.ok || !$("b-in").value || !$("b-out").value;
+  $("err-dates").textContent = "Check-out must be at least one day after check-in.";
+  $("bill-dates").textContent = c.ok
+    ? `${pretty($("b-in").value)} → ${pretty($("b-out").value)} · ${c.adults} adult${c.adults > 1 ? "s" : ""}${c.kids ? `, ${c.kids} child${c.kids > 1 ? "ren" : ""}` : ""}`
+    : "Choose your check-in and check-out dates";
+  $("bill-lines").innerHTML = c.lines.map(([l, v]) => `<li><span>${l}</span><span>${inr(v)}</span></li>`).join("");
+  $("bill-total").textContent = inr(c.total);
+  $("done").hidden = true;
+}
+document.querySelectorAll("#bform input, #bform select, #bform textarea").forEach(el => el.addEventListener("input", render));
+$("b-in").addEventListener("change", () => { if (nights() < 1) $("b-out").value = iso(addDays(new Date($("b-in").value + "T00:00:00"), 1)); render(); });
+
+/* featured "add" buttons */
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-add]"); if (!b) return;
+  $("ad-" + b.dataset.add).checked = true; render();
+  $("book").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+});
+
+/* quick form → booking */
+$("quick").addEventListener("submit", e => {
+  e.preventDefault();
+  $("b-in").value = $("q-in").value; $("b-out").value = $("q-out").value; $("b-adults").value = $("q-guests").value;
+  render(); $("book").scrollIntoView({ behavior:"smooth" });
+});
+
+/* submit */
+$("bform").addEventListener("submit", e => {
+  e.preventDefault();
+  const c = calc(), name = $("b-name").value.trim(), phone = $("b-phone").value.replace(/\D/g, "");
+  let bad = false;
+  $("err-name").hidden = !!name; $("err-name").textContent = "Please enter your name."; if (!name) bad = true;
+  const okPhone = phone.length === 10 || (phone.length === 12 && phone.startsWith("91"));
+  $("err-phone").hidden = okPhone; $("err-phone").textContent = "Enter a 10-digit mobile number."; if (!okPhone) bad = true;
+  if (!c.ok){ $("err-dates").hidden = false; bad = true; }
+  if (bad){ (!c.ok ? $("b-in") : !name ? $("b-name") : $("b-phone")).focus(); return; }
+  const ads = selected();
+  const msg = [
+    "Hello Sri Ambalavanar Cottage, I'd like to book a stay.",
+    "",
+    `Check-in: ${pretty($("b-in").value)}`,
+    `Check-out: ${pretty($("b-out").value)} (${c.n} night${c.n > 1 ? "s" : ""})`,
+    `Guests: ${c.adults} adult${c.adults > 1 ? "s" : ""}${c.kids ? `, ${c.kids} child${c.kids > 1 ? "ren" : ""} under 11` : ""}`,
+    `Arrival time: ${$("b-time").value || "Will confirm"}`,
+    `Add-ons: ${ads.length ? ads.map(a => a.name).join(", ") : "None"}`,
+    `Estimated total: ${inr(c.total)}`,
+    "",
+    `Name: ${name}`,
+    `Mobile: ${phone}`,
+    $("b-note").value.trim() ? `Requests: ${$("b-note").value.trim()}` : "",
+    "",
+    "Please confirm availability."
+  ].filter((l, i, arr) => !(l === "" && arr[i - 1] === "")).join("\n");
+  $("done-msg").textContent = msg;
+  const waUrl = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  $("wa-link").href = waUrl;
+  $("copy-state").textContent = "WhatsApp opened with your message. Tap Send there to send it.";
+  $("done").hidden = false;
+  let win = null;
+  try { win = window.open(waUrl, "_blank", "noopener"); } catch {}
+  if (!win) $("copy-state").textContent = "Tap Open WhatsApp, then press Send in WhatsApp.";
+  $("wa-link").focus();
+});
+$("copy-msg").addEventListener("click", () => {
+  const t = $("done-msg").textContent;
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($("done-msg")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $("copy-state").textContent = "Message selected. Press Ctrl+C or long-press to copy."; };
+  try { navigator.clipboard.writeText(t).then(() => $("copy-state").textContent = "Copied.", fallback); } catch { fallback(); }
+});
+render();
+
+/* ===== hero: peacock feather fan (canvas) ===== */
+(() => {
+  const cv = $("fan"), ctx = cv.getContext("2d");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w = 0, h = 0, dpr = 1, feathers = [], running = true, raf;
+  function build(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = cv.clientWidth; h = cv.clientHeight;
+    cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const narrow = w < 900;
+    const ox = narrow ? w * 0.5 : w * 0.8, oy = h * 1.08;
+    const R = Math.max(w, h) * (narrow ? 0.85 : 0.72);
+    feathers = [];
+    const rings = [[1, 15, 0], [0.74, 13, 0.5], [0.5, 10, 0.25]];
+    rings.forEach(([s, count, off], ri) => {
+      for (let i = 0; i < count; i++){
+        const t = (i + off) / (count - 1 + off * 0);
+        const ang = -Math.PI * (0.06 + 0.88 * Math.min(1, t));
+        feathers.push({ ox, oy, ang, len: R * s * (0.94 + ((i * 37) % 7) / 100), sc: (narrow ? 0.75 : 1) * (1.15 - ri * 0.18), ph: i * 1.7 + ri });
+      }
+    });
+  }
+  function eye(x, y, a, s, glow){
+    ctx.save(); ctx.translate(x, y); ctx.rotate(a + Math.PI / 2);
+    const L = [[26, 33, `rgba(201,150,43,${0.55 * glow})`], [20, 25, `rgba(46,158,122,${0.85 * glow})`], [13.5, 16, `rgba(29,95,168,${0.95 * glow})`], [7, 8.5, `rgba(10,27,58,${glow})`]];
+    L.forEach(([rx, ry, c], k) => { ctx.beginPath(); ctx.ellipse(0, k * 1.6 * s, rx * s, ry * s, 0, 0, Math.PI * 2); ctx.fillStyle = c; ctx.fill(); });
+    ctx.beginPath(); ctx.ellipse(-2 * s, 3 * s, 2.2 * s, 3 * s, 0, 0, Math.PI * 2); ctx.fillStyle = `rgba(243,238,223,${0.35 * glow})`; ctx.fill();
+    ctx.restore();
+  }
+  function frame(ms){
+    const t = ms / 1000;
+    ctx.clearRect(0, 0, w, h);
+    feathers.forEach(f => {
+      const a = f.ang + (reduce ? 0 : Math.sin(t * 0.55 + f.ph) * 0.012);
+      const ca = Math.cos(a), sa = Math.sin(a);
+      const tx = f.ox + ca * f.len, ty = f.oy + sa * f.len;
+      ctx.strokeStyle = "rgba(201,150,43,.28)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(f.ox, f.oy); ctx.lineTo(tx, ty); ctx.stroke();
+      ctx.strokeStyle = "rgba(46,158,122,.16)";
+      ctx.beginPath();
+      for (let s = 0.3; s < 0.97; s += 0.022){
+        const px = f.ox + ca * f.len * s, py = f.oy + sa * f.len * s, bl = 26 * f.sc * (0.4 + s);
+        for (const side of [-1, 1]){
+          const ba = a + side * 0.9;
+          ctx.moveTo(px, py); ctx.lineTo(px + Math.cos(ba) * bl, py + Math.sin(ba) * bl);
+        }
+      }
+      ctx.stroke();
+      const glow = reduce ? 0.9 : 0.78 + 0.22 * Math.sin(t * 0.9 + f.ph * 1.3);
+      eye(tx, ty, a, f.sc, glow);
+    });
+    if (running && !reduce) raf = requestAnimationFrame(frame);
+  }
+  build(); frame(0);
+  if (!reduce){
+    raf = requestAnimationFrame(frame);
+    new IntersectionObserver(([en]) => { running = en.isIntersecting; if (running){ cancelAnimationFrame(raf); raf = requestAnimationFrame(frame); } }).observe(cv);
+  }
+  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { build(); frame(performance.now()); }, 120); });
+})();
+</script>
+</body>
+</html>
